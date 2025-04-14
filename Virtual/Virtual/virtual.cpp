@@ -44,6 +44,21 @@ public:
 	}
 };
 
+
+class Player
+{
+public:
+	void SetHp(int a)
+	{
+		hp = a;
+		atk = a;
+	}
+
+private:
+	int hp;
+	int atk;
+};
+
 int main()
 {
 	Pet* p = new Dog();
