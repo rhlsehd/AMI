@@ -405,3 +405,11 @@ FodyWeavers.xsd
 *.x64
 
 
+Virtual/.vs/Virtual/v17/.suo
+Virtual/.vs/Virtual/v17/Browse.VC.db
+Virtual/.vs/Virtual/v17/DocumentLayout.backup.json
+Virtual/.vs/Virtual/v17/DocumentLayout.json
+*.json
+*.json
+*.db
+/Virtual/.vs/Virtual/v17
