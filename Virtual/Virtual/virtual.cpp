@@ -2,8 +2,52 @@
 
 using namespace std;
 
+// virtual 키워드 유무 차이 지워보면서 확인하기
+class Pet
+{
+public:
+	Pet()
+	{
+		cout << "Pet 기본생성자" << endl;
+	}
+
+	virtual ~Pet()
+	{
+		cout << "Pet 소멸자" << endl;
+	}
+
+	virtual void Sound()
+	{
+		cout << "동물 소리" << endl;
+	}
+
+private:
+	
+};
+
+class Dog : public Pet
+{
+public:
+	Dog()
+	{
+		cout << "Dog 기본생성자" << endl;
+	}
+
+	~Dog()
+	{
+		cout << "Dog 소멸자" << endl;
+	}
+
+	void Sound()
+	{
+		cout << "멍멍" << endl;
+	}
+};
+
 int main()
 {
-	int a = 1;
+	Pet* p = new Dog();
+	p->Sound();
+	delete p;
 }
 
