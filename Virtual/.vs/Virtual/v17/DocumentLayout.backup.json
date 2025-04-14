@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D1C57F3F-FBB3-4DB4-BB25-7D7C8E8E0494}|Virtual\\Virtual.vcxproj|C:\\Users\\sinjm\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC2E0\uC9C0\uBBFC\\AMI\\AMI\\Virtual\\Virtual\\virtual.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D1C57F3F-FBB3-4DB4-BB25-7D7C8E8E0494}|Virtual\\Virtual.vcxproj|solutionrelative:Virtual\\virtual.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sinjm\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC2E0\uC9C0\uBBFC\\AMI\\HelloGit.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,24 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HelloGit.txt",
-              "DocumentMoniker": "C:\\Users\\sinjm\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC2E0\uC9C0\uBBFC\\AMI\\HelloGit.txt",
-              "RelativeDocumentMoniker": "..\\..\\HelloGit.txt",
-              "ToolTip": "C:\\Users\\sinjm\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC2E0\uC9C0\uBBFC\\AMI\\HelloGit.txt",
-              "RelativeToolTip": "..\\..\\HelloGit.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-14T00:16:27.491Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -44,7 +28,7 @@
               "RelativeDocumentMoniker": "Virtual\\virtual.cpp",
               "ToolTip": "C:\\Users\\sinjm\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uC2E0\uC9C0\uBBFC\\AMI\\AMI\\Virtual\\Virtual\\virtual.cpp",
               "RelativeToolTip": "Virtual\\virtual.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-13T22:39:14.249Z",
               "EditorCaption": ""
