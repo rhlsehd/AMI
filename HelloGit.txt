@@ -403,5 +403,4 @@ FodyWeavers.xsd
 *.vs
 *.Debug
 *.x64
-
-
+.vs/
