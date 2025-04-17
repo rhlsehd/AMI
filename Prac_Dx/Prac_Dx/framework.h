@@ -33,3 +33,12 @@
 
 using namespace std;
 using namespace DirectX;
+
+#include "Core/Device/Device.h"
+
+
+// Macro
+#include "Macro.h"
+
+
+extern HWND hWnd;
