@@ -49,6 +49,6 @@ int(*func)(int);
 int main()
 {
 	Func f;
-
-	cout << f(10) << endl;
+	Max
+	
 }
