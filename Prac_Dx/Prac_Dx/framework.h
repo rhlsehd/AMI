@@ -35,7 +35,7 @@ using namespace std;
 using namespace DirectX;
 
 #include "Core/Device/Device.h"
-
+#include "Program/GameManager.h"
 
 // Macro
 #include "Macro.h"

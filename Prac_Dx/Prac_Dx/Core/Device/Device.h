@@ -41,5 +41,7 @@ private:
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain; // 화면에 그려지는 과정 여러개 버퍼를 이용하여 화면에 출력, 화면 깜빡임 방지
     // 후면버퍼를 가리킬 포인터
     Microsoft::WRL::ComPtr<ID3D11RenderTargetView> renderTargetView; // <- 그래픽 작업의 결과가 어디에 저장될지를 결정하는 "출력 대상"
+    // RenderTargetView = DirectX가 “여기다 그림을 그려라” 라고 알려주는 목표 지점
+    //
 };
 

@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="Core\Device\Device.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
     <ClInclude Include="Resource.h" />
@@ -145,6 +146,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">framework.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
   </ItemGroup>
   <ItemGroup>
