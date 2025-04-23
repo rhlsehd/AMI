@@ -37,6 +37,14 @@ using namespace DirectX;
 #include "Core/Device/Device.h"
 #include "Program/GameManager.h"
 
+
+
+// Shader
+#include "Render/Shader/InputLayout.h"
+#include "Render/Shader/VertexBuffer.h"
+#include "Render/Shader/VertexShader.h"
+#include "Render/Shader/PixelShader.h"
+
 // Macro
 #include "Macro.h"
 

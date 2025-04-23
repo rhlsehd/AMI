@@ -134,11 +134,16 @@
   <ItemGroup>
     <ClInclude Include="Core\Device\Device.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Render\Shader\PixelShader.h" />
+    <ClInclude Include="Render\Shader\InputLayout.h" />
     <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Render\Shader\VertexShader.h" />
+    <ClInclude Include="Render\Shader\VertexBuffer.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Device\Device.cpp" />
@@ -146,8 +151,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">framework.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Render\Shader\PixelShader.cpp" />
+    <ClCompile Include="Render\Shader\InputLayout.cpp" />
     <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
+    <ClCompile Include="Render\Shader\VertexShader.cpp" />
+    <ClCompile Include="Render\Shader\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc" />

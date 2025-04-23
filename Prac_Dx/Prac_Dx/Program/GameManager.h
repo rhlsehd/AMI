@@ -1,4 +1,10 @@
 #pragma once
+
+#include "Render/Shader/InputLayout.h"
+#include "Render/Shader/VertexBuffer.h"
+#include "Render/Shader/VertexShader.h"
+#include "Render/Shader/PixelShader.h"
+
 class GameManager
 {
 public:
@@ -14,6 +20,7 @@ public:
             delete _instance;
     }
 
+    static void Init();
     static void Update();
     static void Render();
 
@@ -23,5 +30,10 @@ private:
     ~GameManager();
 
     static GameManager* _instance;
+        
+    static shared_ptr<class VertexShader> vertexShader;
+    static shared_ptr<class VertexBuffer> vertexBuffer;
+    static shared_ptr<class InputLayout> inputLayout;
+    static shared_ptr<class PixelShader> pixelShader;
 };
 

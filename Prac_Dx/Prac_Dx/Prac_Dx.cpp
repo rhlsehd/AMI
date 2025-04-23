@@ -23,22 +23,12 @@
 // 렌더링 대상을 결정(어디에 그릴지 결정)
 
 // -------------------------------------------------
-Microsoft::WRL::ComPtr<ID3D11Buffer> vertexBuffer; // 정점의 정보를 담아두는 공간
-Microsoft::WRL::ComPtr<ID3D11InputLayout> inputLayOut; // 정점 데이터의 형식을 정의하는 설명서, 각 정점이 가진 데이터 형태(위치, 색상) 등을 GPU에게 설명, 얘를 통해 GPU가 무엇을 어떻게 그릴지 알 수 있음
-Microsoft::WRL::ComPtr<ID3D11VertexShader> vertexShader; // 정점 데이터를 처리하는 셰이더, GPU에서 실행되어 정점 데이터를 변환하거나 조작하는 셰이더 프로그램
-Microsoft::WRL::ComPtr<ID3D11PixelShader> pixelShader; // 픽셀 데이터를 처리하는 셰이더, GPU에서 실행되어 픽셀 색상을 계산하는 셰이더 프로그램
 
-struct Vertex
-{
-    Vertex() : pos(XMFLOAT3()) {}
-    Vertex(float x, float y) : pos(x, y, 0) {}
 
-    XMFLOAT3 pos;
-    XMFLOAT4 color = XMFLOAT4(1, 1, 1, 1);
-};
+ // 정점 데이터를 처리하는 셰이더, GPU에서 실행되어 정점 데이터를 변환하거나 조작하는 셰이더 프로그램
 
-void Init();
-void Render();
+
+
 
 // 전역 변수:
 
@@ -75,11 +65,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     Device::Create();
-   
+    GameManager::Create();
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PRACDX));
 
 
-    Init();
+    GameManager::Init();
     MSG msg;
 
     // 기본 메시지 루프입니다:
@@ -97,96 +87,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         
         else
         {
-            Render();
+            GameManager::Render();
         }
     }
+    GameManager::Delete();
     Device::Delete();
+
     return (int) msg.wParam;
 }
 
 
-
-void Init()
-{
-#pragma region Device, DC, SwapChain, RenderTarget
-    
-#pragma endregion
-
-    // VertexInputLayOut -> VertexShader -> PixelShader
-
-        // Vertex Shader에 들어갈 때, 데이터(Vertex, 색.. 등등)들의 설명서
-    D3D11_INPUT_ELEMENT_DESC layout[] =
-    {
-        {
-            "POSITION",0,DXGI_FORMAT_R32G32B32_FLOAT,0,0,
-            D3D11_INPUT_PER_VERTEX_DATA,0
-        },
-
-        {
-            "COLOR",0,DXGI_FORMAT_R32G32B32A32_FLOAT,0,12,
-            D3D11_INPUT_PER_VERTEX_DATA,0
-        }
-
-        
-    };
-
-    UINT layoutSize = ARRAYSIZE(layout);
-
-    DWORD flags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
-
-    Microsoft::WRL::ComPtr<ID3DBlob> vertexBlob; // VertexShader를 만들 때 필요한 얘
-    D3DCompileFromFile(L"Shader/VertexShader.hlsl", nullptr, nullptr,  /* 진입점 이름 */"VS", "vs_5_0", flags, 0, vertexBlob.GetAddressOf(), nullptr);
-
-    DEVICE->CreateInputLayout(layout, layoutSize, vertexBlob->GetBufferPointer(), vertexBlob->GetBufferSize(), inputLayOut.GetAddressOf());
-    DEVICE->CreateVertexShader(vertexBlob->GetBufferPointer(), vertexBlob->GetBufferSize(), nullptr, IN vertexShader.GetAddressOf());
-
-    Microsoft::WRL::ComPtr<ID3DBlob> pixelBlob; // PixelShader를 만들 때 필요한 얘
-    D3DCompileFromFile(L"Shader/PixelShader.hlsl", nullptr, nullptr, "PS", "ps_5_0", flags, 0, pixelBlob.GetAddressOf(), nullptr);
-    DEVICE->CreatePixelShader(pixelBlob->GetBufferPointer(), pixelBlob->GetBufferSize(), nullptr, IN pixelShader.GetAddressOf());
-
-    /* TODO */
-    Vertex vertices[6] = { {-0.5f,0.5f}, {0.5f, -0.5f}, {-0.5f, -0.5f}, {-0.5f,0.5f}, {0.5f,0.5f }, { 0.5f,-0.5f } };
-        
-    vertices[0].color = { 1,0,0,1 };
-    vertices[1].color = { 0,1,0,1 };
-    vertices[2].color = { 0,0,1,1 };
-    vertices[3].color = { 0,0,1,1 };
-    vertices[4].color = { 0,1,0,1 };
-    vertices[5].color = { 1,0,0,1 };
-   
-    // VertexBuffer 세팅
-    D3D11_BUFFER_DESC bd = {};
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(Vertex) * 6; // <- 버퍼를 할당할 때 필요한 메모리 크기를 설정, 버퍼에 저장할 데이터의 총 크기를 지정하고, 메모리를 올바르게 할당할 수 있도록 도와줍니다.
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-
-    D3D11_SUBRESOURCE_DATA initData = {};
-    initData.pSysMem = &vertices[0];
-
-    DEVICE->CreateBuffer(&bd, &initData, vertexBuffer.GetAddressOf());
-}
-
-void Render()
-{
-    float clearColor[] = { 1.0f ,1.0f ,1.0f ,1.0f };
-
-    DC->ClearRenderTargetView(Device::GetInstance()->GetRTV().Get(), clearColor);
-
-    DC->VSSetShader(vertexShader.Get(), nullptr, 0);
-    DC->PSSetShader(pixelShader.Get(), nullptr, 0);
-
-    DC->IASetInputLayout(inputLayOut.Get());
-
-    UINT stride = sizeof(Vertex);
-    UINT offset = 0;
-    DC->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
-
-    DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-    DC->Draw(6, 0);
-
-    Device::GetInstance()->GetSwapChain()->Present(0, 0);
-}
 
 
 //
