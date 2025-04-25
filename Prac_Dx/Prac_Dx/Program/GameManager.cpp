@@ -34,6 +34,12 @@ void GameManager::Init()
 
 void GameManager::Update()
 {
+    /*  ?? 입력 처리	키보드, 마우스 입력 받기 <- 싱글톤패턴
+        ?? 게임 로직 처리	플레이어 위치 이동, 적 AI 업데이트 등
+        ? 시간 기반 업데이트	deltaTime 사용해서 움직임 부드럽게 <- 싱글톤패턴
+        ?? 애니메이션	프레임 전환, 타이머 체크
+        ?? 충돌 처리	AABB, 원 충돌 등
+        ?? 리소스 관리	텍스처 변경, 상태 전환 등*/
 }
 
 void GameManager::Render()

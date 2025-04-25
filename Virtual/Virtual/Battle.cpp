@@ -19,18 +19,12 @@ public:
 
 	void Attack(Creature* other)
 	{
-		other->_hp -= _atk;
+
 	}
 
 	bool IsDead()
 	{
-		if (_hp <= 0)
-		{
-			_hp = 0;
-			return true;
-		}
 
-		return false;
 	}
 protected:
 	string _name;
@@ -92,5 +86,6 @@ int main()
 	{
 	
 	}
+
 	return 0;
 }
