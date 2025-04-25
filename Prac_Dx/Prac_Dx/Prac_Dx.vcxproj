@@ -134,15 +134,17 @@
   <ItemGroup>
     <ClInclude Include="Core\Device\Device.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Render\Shader\PixelShader.h" />
-    <ClInclude Include="Render\Shader\InputLayout.h" />
+    <ClInclude Include="Core\Math\Vector.h" />
+    <ClInclude Include="Core\Render\Shader\PixelShader.h" />
+    <ClInclude Include="Core\Render\Shader\InputLayout.h" />
     <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Render\Shader\VertexShader.h" />
-    <ClInclude Include="Render\Shader\VertexBuffer.h" />
+    <ClInclude Include="Core\Render\Shader\VertexShader.h" />
+    <ClInclude Include="Core\Render\Shader\VertexBuffer.h" />
+    <ClInclude Include="Core\Texture\Texture.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,18 +153,20 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">framework.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="Render\Shader\PixelShader.cpp" />
-    <ClCompile Include="Render\Shader\InputLayout.cpp" />
+    <ClCompile Include="Core\Render\Shader\PixelShader.cpp" />
+    <ClCompile Include="Core\Render\Shader\InputLayout.cpp" />
     <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
-    <ClCompile Include="Render\Shader\VertexShader.cpp" />
-    <ClCompile Include="Render\Shader\VertexBuffer.cpp" />
+    <ClCompile Include="Core\Render\Shader\VertexShader.cpp" />
+    <ClCompile Include="Core\Render\Shader\VertexBuffer.cpp" />
+    <ClCompile Include="Core\Texture\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Prac_Dx.ico" />
+    <Image Include="Resource\Isaac_character.jpeg" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +186,11 @@
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DirectTex\DirectXTex_Desktop_2022.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

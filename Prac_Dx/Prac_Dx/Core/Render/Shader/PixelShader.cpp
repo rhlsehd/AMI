@@ -5,6 +5,7 @@ PixelShader::PixelShader(wstring file)
 {
     CreateBlob(file);
     CreatePixelShader();
+
 }
 
 PixelShader::~PixelShader()
@@ -13,7 +14,7 @@ PixelShader::~PixelShader()
 
 void PixelShader::SetPs()
 {
-    DC->PSSetShader(pixelShader.Get(), nullptr, 0);
+    DC->PSSetShader(pixelShader.Get(), nullptr, 0); 
 }
 
 void PixelShader::CreatePixelShader()

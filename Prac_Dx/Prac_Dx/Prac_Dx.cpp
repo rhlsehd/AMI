@@ -66,12 +66,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     Device::Create();
     GameManager::Create();
+
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PRACDX));
 
 
-    GameManager::Init();
-    MSG msg;
+    GameManager::GetInstance()->Init();
 
+    MSG msg = {};
+     
     // 기본 메시지 루프입니다:
     while (GetMessage(&msg, nullptr, 0, 0))
     {
@@ -84,12 +86,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 DispatchMessage(&msg);
             }
         }
-        
+
         else
         {
-            GameManager::Render();
+          GameManager::GetInstance()->Render();
         }
+        
     }
+
     GameManager::Delete();
     Device::Delete();
 
@@ -140,16 +144,16 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) // <- 윈도우 애플리�
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
    hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+       0, 0, WIN_WIDTH, WIN_HEIGHT, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
       return FALSE;
    }
-
+   SetMenu(hWnd, nullptr);
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
-
+   
    return TRUE;
 }
 

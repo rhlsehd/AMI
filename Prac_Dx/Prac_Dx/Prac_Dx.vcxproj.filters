@@ -39,19 +39,25 @@
     <ClInclude Include="Program\GameManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Render\Shader\VertexShader.h">
+    <ClInclude Include="Core\Render\Shader\VertexShader.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Render\Shader\VertexBuffer.h">
+    <ClInclude Include="Core\Render\Shader\VertexBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Render\Shader\InputLayout.h">
+    <ClInclude Include="Core\Render\Shader\InputLayout.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Render\Shader\PixelShader.h">
+    <ClInclude Include="Core\Render\Shader\PixelShader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Texture\Texture.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\Vector.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,16 +74,19 @@
     <ClCompile Include="Program\GameManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Render\Shader\VertexShader.cpp">
+    <ClCompile Include="Core\Render\Shader\VertexShader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Render\Shader\VertexBuffer.cpp">
+    <ClCompile Include="Core\Render\Shader\VertexBuffer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Render\Shader\InputLayout.cpp">
+    <ClCompile Include="Core\Render\Shader\InputLayout.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Render\Shader\PixelShader.cpp">
+    <ClCompile Include="Core\Render\Shader\PixelShader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Texture\Texture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -91,6 +100,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Prac_Dx.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Isaac_character.jpeg">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

@@ -24,7 +24,7 @@
 #include <d3dcompiler.h>
 #include <DirectXMath.h>
 
-
+#include "../DirectTex/DirectXTex.h"
 
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"d3dcompiler.lib")
@@ -35,18 +35,23 @@ using namespace std;
 using namespace DirectX;
 
 #include "Core/Device/Device.h"
-#include "Program/GameManager.h"
 
-
+// Math
+#include "Core/Math/Vector.h"
 
 // Shader
-#include "Render/Shader/InputLayout.h"
-#include "Render/Shader/VertexBuffer.h"
-#include "Render/Shader/VertexShader.h"
-#include "Render/Shader/PixelShader.h"
+#include "Core/Render/Shader/InputLayout.h"
+#include "Core/Render/Shader/VertexBuffer.h"
+#include "Core/Render/Shader/VertexShader.h"
+#include "Core/Render/Shader/PixelShader.h"
 
 // Macro
 #include "Macro.h"
 
+// Texture
+#include "Core/Texture/Texture.h"
+
+
+#include "Program/GameManager.h"
 
 extern HWND hWnd;
