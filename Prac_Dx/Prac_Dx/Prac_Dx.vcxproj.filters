@@ -60,6 +60,18 @@
     <ClInclude Include="Core\Math\Vector.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Buffer\ConstantBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Buffer\MatrixBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\Transform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Objects\GameObject.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="framework.cpp">
@@ -89,6 +101,15 @@
     <ClCompile Include="Core\Texture\Texture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Buffer\ConstantBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Math\Transform.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Objects\GameObject.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc">
@@ -102,7 +123,13 @@
     <Image Include="Prac_Dx.ico">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="Resource\Isaac_character.jpeg">
+    <Image Include="Resource\Isaac.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\heart.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\monster.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

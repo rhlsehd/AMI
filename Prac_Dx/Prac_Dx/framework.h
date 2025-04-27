@@ -38,6 +38,7 @@ using namespace DirectX;
 
 // Math
 #include "Core/Math/Vector.h"
+#include "Core/Math/Transform.h"
 
 // Shader
 #include "Core/Render/Shader/InputLayout.h"
@@ -45,13 +46,21 @@ using namespace DirectX;
 #include "Core/Render/Shader/VertexShader.h"
 #include "Core/Render/Shader/PixelShader.h"
 
-// Macro
-#include "Macro.h"
+
+// Buffer
+#include "Core/Buffer/ConstantBuffer.h"
+#include "Core/Buffer/MatrixBuffer.h"
+
 
 // Texture
 #include "Core/Texture/Texture.h"
 
+#include "Core/Objects/GameObject.h"
 
+// Program
 #include "Program/GameManager.h"
 
+
+// Macro
+#include "Macro.h"
 extern HWND hWnd;

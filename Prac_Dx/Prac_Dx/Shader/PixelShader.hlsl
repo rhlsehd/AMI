@@ -1,3 +1,5 @@
+
+
 struct PixelInput
 {
     float4 pos : SV_Position; // SystemValue
@@ -10,5 +12,12 @@ SamplerState samp : register(s0); // <- 샘플러를 s0 슬롯에 바인딩해서 셰이더에서
 
 float4 PS(PixelInput input) : SV_TARGET
 { 
-    return tex.Sample(samp, input.uv);
+    float4 texColor = tex.Sample(samp, input.uv);
+    
+    if (texColor.a < 0.1f)
+    {
+        discard; // 알파 값이 낮으면 픽셀을 버림 (투명 처리)
+    }
+    
+    return texColor;
 }

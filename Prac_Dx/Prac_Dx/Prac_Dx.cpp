@@ -64,13 +64,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
-    Device::Create();
-    GameManager::Create();
+   
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PRACDX));
 
 
-    GameManager::GetInstance()->Init();
+    Device::Create();
+    GameManager::Create();
 
     MSG msg = {};
      
@@ -89,7 +89,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
         else
         {
-          GameManager::GetInstance()->Render();
+            GameManager::GetInstance()->Update();
+            GameManager::GetInstance()->Render();
         }
         
     }

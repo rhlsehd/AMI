@@ -132,11 +132,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Buffer\ConstantBuffer.h" />
+    <ClInclude Include="Core\Buffer\MatrixBuffer.h" />
     <ClInclude Include="Core\Device\Device.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Core\Math\Vector.h" />
     <ClInclude Include="Core\Render\Shader\PixelShader.h" />
     <ClInclude Include="Core\Render\Shader\InputLayout.h" />
+    <ClInclude Include="Core\Objects\GameObject.h" />
     <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
@@ -145,9 +148,11 @@
     <ClInclude Include="Core\Render\Shader\VertexShader.h" />
     <ClInclude Include="Core\Render\Shader\VertexBuffer.h" />
     <ClInclude Include="Core\Texture\Texture.h" />
+    <ClInclude Include="Core\Math\Transform.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Buffer\ConstantBuffer.cpp" />
     <ClCompile Include="Core\Device\Device.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -155,18 +160,22 @@
     </ClCompile>
     <ClCompile Include="Core\Render\Shader\PixelShader.cpp" />
     <ClCompile Include="Core\Render\Shader\InputLayout.cpp" />
+    <ClCompile Include="Core\Objects\GameObject.cpp" />
     <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
     <ClCompile Include="Core\Render\Shader\VertexShader.cpp" />
     <ClCompile Include="Core\Render\Shader\VertexBuffer.cpp" />
     <ClCompile Include="Core\Texture\Texture.cpp" />
+    <ClCompile Include="Core\Math\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Prac_Dx.ico" />
-    <Image Include="Resource\Isaac_character.jpeg" />
+    <Image Include="Resource\heart.png" />
+    <Image Include="Resource\Isaac.png" />
+    <Image Include="Resource\monster.png" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,5 @@
 #pragma once
-
-#include "Core/Render/Shader/InputLayout.h"
-#include "Core/Render/Shader/VertexBuffer.h"
-#include "Core/Render/Shader/VertexShader.h"
-#include "Core/Render/Shader/PixelShader.h"
-#include "Core/Texture/Texture.h"
-
-class GameManager
+class GameManager // °ÔÀÓ Èå¸§À» ÃÑ°ýÇÏ´Â Å¬·¡½º
 {
 public:
     static void Create()
@@ -31,12 +24,11 @@ private:
     ~GameManager();
 
     static GameManager* _instance;
-        
-    shared_ptr<class VertexShader> vertexShader;
-    shared_ptr<class VertexBuffer> vertexBuffer;
-    shared_ptr<class InputLayout> inputLayout;
-    shared_ptr<class PixelShader> pixelShader;
+      
+    shared_ptr<MatrixBuffer> _world;
+    shared_ptr<MatrixBuffer> _view;
+    shared_ptr<MatrixBuffer> _projection;
 
-    vector<Vertex> vertices;
+    shared_ptr<GameObject> Isaac;
 };
 

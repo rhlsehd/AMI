@@ -13,8 +13,9 @@ Texture::~Texture()
 
 void Texture::PSSet(UINT slot)
 {
-    DC->PSSetShaderResources(slot, 1, _srv.GetAddressOf());
-    DC->PSSetSamplers(slot, 1, _sampler.GetAddressOf());
+    DC->PSSetShaderResources(slot, 1, _srv.GetAddressOf()); // 이 코드는 텍스처를 픽셀 셰이더의 특정 슬롯(예: t0)에 바인딩
+    //_srv =  Shader Resource View (셰이더에서 사용할 수 있도록 만든 텍스처 뷰)
+    DC->PSSetSamplers(slot, 1, _sampler.GetAddressOf()); // 샘플러 상태를 연결해주는 곳. 예를 들어 POINT 방식으로 픽셀을 샘플링할지, LINEAR로 부드럽게 보간할지 등을 결정
 }
 
 

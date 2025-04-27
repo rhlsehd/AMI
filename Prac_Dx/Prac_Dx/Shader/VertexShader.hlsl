@@ -1,3 +1,19 @@
+
+cbuffer World : register(b0)
+{
+    matrix world;
+}
+
+cbuffer View : register(b1)
+{
+    matrix view;
+}
+
+cbuffer Projection : register(b2)
+{
+    matrix projection;
+}
+
 struct VertexInput // 정점 버퍼에서 GPU로 들어오는 데이터를 받는 입력 구조체
 {
     float4 pos : POSITION; // <- 4D 벡터, 정점의 위치 (x,y,z,w)
@@ -19,5 +35,10 @@ VertexOutput VS(VertexInput input)
     result.pos = input.pos;
     result.color = input.color;
     result.uv = input.uv;
+
+    result.pos = mul(result.pos, world);
+    result.pos = mul(result.pos, view);
+    result.pos = mul(result.pos, projection);
+ 
     return result;
 }
