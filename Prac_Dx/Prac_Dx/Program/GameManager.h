@@ -29,6 +29,9 @@ private:
     shared_ptr<MatrixBuffer> _view;
     shared_ptr<MatrixBuffer> _projection;
 
-    shared_ptr<GameObject> Isaac;
+    shared_ptr<Texture> _texture;
+
+    shared_ptr<Player> _player;
+    shared_ptr<Monster> _monster;
 };
 

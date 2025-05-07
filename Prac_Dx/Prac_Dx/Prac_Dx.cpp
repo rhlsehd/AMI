@@ -71,11 +71,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     Device::Create();
     GameManager::Create();
+    TimeManager::Create();
+    InputManager::Create();
 
     MSG msg = {};
      
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    while (msg.message != WM_QUIT)
     {
 
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
@@ -95,6 +97,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         
     }
 
+    InputManager::Delete();
+    TimeManager::Delete();
     GameManager::Delete();
     Device::Delete();
 

@@ -13,42 +13,53 @@ void Hello()
 	cout << "Hello" << endl;
 }
 
-class Func
+
+class Square
 {
 public:
-	Func() {}
 	int operator()(int a)
 	{
-		int res;
-		res = a * a;
-		return res;
+		return a / a;
 	}
-private:
-	int num;
 };
-int Square(int a) { return a * a; }
-int A(int a) { return a - 10 / 2; }
 
-int Max(int* arr, int size, int(*func)(int))
+
+class A
 {
-	int max = func(arr[0]);
-
-	for (int i = 0; i < size; i++)
+public:
+	int operator()(int a)
 	{
-		if (max < func(arr[i]))
-			max = func(arr[i]);
+		return a * a;
 	}
+};
 
-	return max;
+
+
+template<typename T>
+int Print(T func, int a)
+{
+	return func(a);
 }
 
 
 void(*f)(void);
 int(*func)(int);
 
+
+class Myfunc
+{
+public:
+
+	void operator()()
+	{
+		cout << num << endl;
+		cout << "Myfunc" << endl;
+	}
+
+	int num;
+};
+
 int main()
 {
-	Func f;
-	Max
-	
+
 }

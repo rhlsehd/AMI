@@ -11,14 +11,19 @@ public:
     void CreateVertices();
     void CreateMeterial(wstring file);
     
+    void Input();
+
     shared_ptr<class Transform> GetTransform() { return _transform; }
 private:
     shared_ptr<VertexShader> _vertexShader;
     shared_ptr<VertexBuffer> _vertexBuffer;
     shared_ptr<InputLayout> _inputLayout;
     shared_ptr<PixelShader> _pixelShader;
+
     shared_ptr<Texture> _texture;
+
     shared_ptr<class Transform> _transform;
+
     vector<Vertex> _vertices;
 };
 

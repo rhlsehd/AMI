@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Math\CircleCollider.h" />
     <ClInclude Include="Core\Buffer\ConstantBuffer.h" />
     <ClInclude Include="Core\Buffer\MatrixBuffer.h" />
     <ClInclude Include="Core\Device\Device.h" />
@@ -140,6 +141,9 @@
     <ClInclude Include="Core\Render\Shader\PixelShader.h" />
     <ClInclude Include="Core\Render\Shader\InputLayout.h" />
     <ClInclude Include="Core\Objects\GameObject.h" />
+    <ClInclude Include="Core\Utility\InputManager.h" />
+    <ClInclude Include="Core\Objects\Player.h" />
+    <ClInclude Include="Core\Objects\Monster.h" />
     <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
@@ -149,9 +153,11 @@
     <ClInclude Include="Core\Render\Shader\VertexBuffer.h" />
     <ClInclude Include="Core\Texture\Texture.h" />
     <ClInclude Include="Core\Math\Transform.h" />
+    <ClInclude Include="Core\Utility\TimeManager.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Math\CircleCollider.cpp" />
     <ClCompile Include="Core\Buffer\ConstantBuffer.cpp" />
     <ClCompile Include="Core\Device\Device.cpp" />
     <ClCompile Include="framework.cpp">
@@ -161,12 +167,16 @@
     <ClCompile Include="Core\Render\Shader\PixelShader.cpp" />
     <ClCompile Include="Core\Render\Shader\InputLayout.cpp" />
     <ClCompile Include="Core\Objects\GameObject.cpp" />
+    <ClCompile Include="Core\Utility\InputManager.cpp" />
+    <ClCompile Include="Core\Objects\Player.cpp" />
+    <ClCompile Include="Core\Objects\Monster.cpp" />
     <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
     <ClCompile Include="Core\Render\Shader\VertexShader.cpp" />
     <ClCompile Include="Core\Render\Shader\VertexBuffer.cpp" />
     <ClCompile Include="Core\Texture\Texture.cpp" />
     <ClCompile Include="Core\Math\Transform.cpp" />
+    <ClCompile Include="Core\Utility\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc" />

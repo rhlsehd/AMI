@@ -15,8 +15,12 @@ void GameManager::Update()
         ?? 애니메이션	프레임 전환, 타이머 체크
         ?? 충돌 처리	AABB, 원 충돌 등
         ?? 리소스 관리	텍스처 변경, 상태 전환 등*/
-    Isaac->GetTransform()->AddPos(Vector(1, 0));
-    Isaac->Update();
+    
+    TimeManager::GetInstance()->Update();
+    InputManager::GetInstance()->Update();
+
+    _player->Update();
+    _monster->Update();
 }
 
 void GameManager::Render()
@@ -31,18 +35,16 @@ void GameManager::Render()
      _view->SetVS(1);
      _projection->SetVS(2);
 
-
-     Isaac->GetTransform()->SetVS(0);
-     Isaac->Render();
-    
+     _player->Render();
+     _monster->Render();
+ 
      Device::GetInstance()->GetSwapChain()->Present(0, 0);
 }
 
 GameManager::GameManager()
 {
-    Isaac = make_shared<GameObject>(L"Resource/Isaac.png");
-    Isaac->GetTransform()->SetPos(Vector(WIN_WIDTH / 2.0f, WIN_HEIGHT / 2.0f));
-    Isaac->GetTransform()->SetScale(Vector(150, 150));
+    _player = make_shared<Player>();
+    _monster = make_shared<Monster>();
 
     _view = make_shared<MatrixBuffer>();
     _projection = make_shared<MatrixBuffer>();

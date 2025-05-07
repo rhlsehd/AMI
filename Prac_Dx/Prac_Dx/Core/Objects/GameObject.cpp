@@ -59,3 +59,23 @@ void GameObject::CreateMeterial(wstring file)
     _pixelShader = make_shared<PixelShader>(L"Shader/PixelShader.hlsl");
     _texture = make_shared<Texture>(file);
 }
+
+void GameObject::Input()
+{
+    if (KEY_PRESS('A'))
+    {
+        _transform->AddPos(Vector(-1, 0) * DELTA_TIME);
+    }
+    if (KEY_PRESS('D'))
+    {
+        _transform->AddPos(Vector(1, 0) * DELTA_TIME);
+    }
+    if (KEY_PRESS('W'))
+    {
+        _transform->AddPos(Vector(0, 1) * DELTA_TIME);
+    }
+    if (KEY_PRESS('S'))
+    {
+        _transform->AddPos(Vector(0, -1) * DELTA_TIME);
+    }
+}
