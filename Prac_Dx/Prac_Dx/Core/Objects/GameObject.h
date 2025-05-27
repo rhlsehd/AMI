@@ -12,8 +12,12 @@ public:
     void CreateMeterial(wstring file);
     
     void Input();
+    void AddColor(XMFLOAT4 color) { _colorbuffer->SetData(color); _colorbuffer->Update(); }
+    Vector GetImageSize() { return _texture->GetImageSize(); }
 
-    shared_ptr<class Transform> GetTransform() { return _transform; }
+    shared_ptr<Transform> GetTransform() { return _transform; }
+
+    void SetLeftRight(int value) { _leftRightBuffer->SetData(value); _leftRightBuffer->Update(); }
 private:
     shared_ptr<VertexShader> _vertexShader;
     shared_ptr<VertexBuffer> _vertexBuffer;
@@ -22,8 +26,10 @@ private:
 
     shared_ptr<Texture> _texture;
 
-    shared_ptr<class Transform> _transform;
+    shared_ptr<Transform> _transform;
 
     vector<Vertex> _vertices;
+    shared_ptr<ColorBuffer> _colorbuffer;
+    shared_ptr<LeftRightBuffer> _leftRightBuffer;
 };
 

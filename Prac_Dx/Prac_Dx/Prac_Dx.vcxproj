@@ -132,6 +132,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Buffer\LeftRightBuffer.h" />
+    <ClInclude Include="Core\Objects\Bullet.h" />
+    <ClInclude Include="Core\Buffer\ColorBuffer.h" />
     <ClInclude Include="Core\Math\CircleCollider.h" />
     <ClInclude Include="Core\Buffer\ConstantBuffer.h" />
     <ClInclude Include="Core\Buffer\MatrixBuffer.h" />
@@ -144,10 +147,12 @@
     <ClInclude Include="Core\Utility\InputManager.h" />
     <ClInclude Include="Core\Objects\Player.h" />
     <ClInclude Include="Core\Objects\Monster.h" />
+    <ClInclude Include="Core\Objects\Heart.h" />
     <ClInclude Include="Program\GameManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Prac_Dx.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Core\Scene\Scene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Core\Render\Shader\VertexShader.h" />
     <ClInclude Include="Core\Render\Shader\VertexBuffer.h" />
@@ -157,6 +162,7 @@
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Objects\Bullet.cpp" />
     <ClCompile Include="Core\Math\CircleCollider.cpp" />
     <ClCompile Include="Core\Buffer\ConstantBuffer.cpp" />
     <ClCompile Include="Core\Device\Device.cpp" />
@@ -170,6 +176,7 @@
     <ClCompile Include="Core\Utility\InputManager.cpp" />
     <ClCompile Include="Core\Objects\Player.cpp" />
     <ClCompile Include="Core\Objects\Monster.cpp" />
+    <ClCompile Include="Core\Objects\Heart.cpp" />
     <ClCompile Include="Program\GameManager.cpp" />
     <ClCompile Include="Prac_Dx.cpp" />
     <ClCompile Include="Core\Render\Shader\VertexShader.cpp" />
@@ -177,18 +184,38 @@
     <ClCompile Include="Core\Texture\Texture.cpp" />
     <ClCompile Include="Core\Math\Transform.cpp" />
     <ClCompile Include="Core\Utility\TimeManager.cpp" />
+    <ClCompile Include="Core\Scene\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Prac_Dx.ico" />
+    <Image Include="Resource\bullet_tear.png" />
     <Image Include="Resource\heart.png" />
     <Image Include="Resource\Isaac.png" />
+    <Image Include="Resource\map.png" />
     <Image Include="Resource\monster.png" />
+    <Image Include="Resource\up_head.png" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="Shader\ColPixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="Shader\ColVertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+    </FxCompile>
     <FxCompile Include="Shader\PixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>

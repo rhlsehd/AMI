@@ -4,10 +4,10 @@
 ConstantBuffer::ConstantBuffer(void* data, UINT dataSize)
     :_data(data), _dataSize(dataSize)
 {
-    D3D11_BUFFER_DESC bd = {};
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = dataSize;
-    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+    D3D11_BUFFER_DESC bd = {}; // Direct3D의 버퍼 설명 구조체를 생성하고 0으로 초기화.
+    bd.Usage = D3D11_USAGE_DEFAULT; // GPU가 주로 사용하는 버퍼
+    bd.ByteWidth = dataSize; // 버퍼 크기 설정
+    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER; // 상수버퍼 초기값 설정, CPU에 있는 _data 내용을 초기 데이터로 사용
 
     D3D11_SUBRESOURCE_DATA initData = {};
     initData.pSysMem = _data;

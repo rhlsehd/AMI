@@ -1,4 +1,8 @@
-
+cbuffer LeftRight : register(b0)
+{
+    int leftRight;
+    int padding[3];
+}
 
 struct PixelInput
 {
@@ -13,6 +17,7 @@ SamplerState samp : register(s0); // <- 샘플러를 s0 슬롯에 바인딩해서 셰이더에서
 float4 PS(PixelInput input) : SV_TARGET
 { 
     float4 texColor = tex.Sample(samp, input.uv);
+    
     
     if (texColor.a < 0.1f)
     {

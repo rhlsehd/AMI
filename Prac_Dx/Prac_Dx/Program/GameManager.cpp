@@ -19,9 +19,8 @@ void GameManager::Update()
     TimeManager::GetInstance()->Update();
     InputManager::GetInstance()->Update();
 
-    _player->Update();
-    _monster->Update();
-}
+    _scene->Update();
+}   
 
 void GameManager::Render()
 {
@@ -35,30 +34,28 @@ void GameManager::Render()
      _view->SetVS(1);
      _projection->SetVS(2);
 
-     _player->Render();
-     _monster->Render();
+     _scene->Render();
  
      Device::GetInstance()->GetSwapChain()->Present(0, 0);
 }
 
 GameManager::GameManager()
 {
-    _player = make_shared<Player>();
-    _monster = make_shared<Monster>();
-
+    _scene = make_shared<Scene>();
     _view = make_shared<MatrixBuffer>();
     _projection = make_shared<MatrixBuffer>();
 
     //뷰 행렬: 그냥 단위 행렬로
-    XMMATRIX viewMatrix = XMMatrixIdentity();
-    _view->SetData(viewMatrix);
-    _view->Update();
+   
+    
 
     XMMATRIX projectionM = XMMatrixOrthographicOffCenterLH(0, WIN_WIDTH, 0, WIN_HEIGHT, 0, 1.0f);
     _projection->SetData(projectionM);
+    _view->Update();
     _projection->Update();
 }
 
 GameManager::~GameManager()
 {
 }
+

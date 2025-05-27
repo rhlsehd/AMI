@@ -31,7 +31,8 @@ private:
 
     shared_ptr<Texture> _texture;
 
-    shared_ptr<Player> _player;
-    shared_ptr<Monster> _monster;
+    
+
+    shared_ptr<Scene> _scene;
 };
 

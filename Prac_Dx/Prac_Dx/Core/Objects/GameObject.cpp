@@ -28,7 +28,7 @@ void GameObject::Render()
     
     _transform->SetVS(0);
     _texture->PSSet(0);                          // 이미지(텍스처)를 픽셀 셰이더에 연결해주는 것, 즉 텍스처를 GPU의 셰이더 리소스로 바인딩하는 역할  
-
+    DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     DC->Draw(6, 0);
 }
 

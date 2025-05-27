@@ -87,6 +87,21 @@
     <ClInclude Include="Core\Math\CircleCollider.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Buffer\ColorBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Scene\Scene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Objects\Bullet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Buffer\LeftRightBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Objects\Heart.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="framework.cpp">
@@ -140,6 +155,15 @@
     <ClCompile Include="Core\Math\CircleCollider.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Scene\Scene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Objects\Bullet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Objects\Heart.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Prac_Dx.rc">
@@ -162,6 +186,15 @@
     <Image Include="Resource\monster.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\bullet_tear.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\map.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\up_head.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\VertexShader.hlsl">
@@ -170,5 +203,7 @@
     <FxCompile Include="Shader\PixelShader.hlsl">
       <Filter>소스 파일\Shader</Filter>
     </FxCompile>
+    <FxCompile Include="Shader\ColVertexShader.hlsl" />
+    <FxCompile Include="Shader\ColPixelShader.hlsl" />
   </ItemGroup>
 </Project>

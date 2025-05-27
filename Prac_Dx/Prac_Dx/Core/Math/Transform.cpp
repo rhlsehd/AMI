@@ -21,7 +21,7 @@ void Transform::Update()
     {
         // 부모가 설정되어있다면 부모의 행렬 뒤에 곱해준다.
         // => 부모의 좌표계로 이동된다.
-        _srtMatrix *= _parent.lock()->GetMatrix();
+        _srtMatrix = _parent.lock()->GetMatrix() * _srtMatrix;
     }
 
     _world->SetData(_srtMatrix);

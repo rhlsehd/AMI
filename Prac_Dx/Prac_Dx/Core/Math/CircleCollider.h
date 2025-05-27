@@ -24,11 +24,14 @@ private:
     void CreateMesh();
     void CreateMaterial();
 
-    
-    shared_ptr<VertexBuffer> _vertexBuffer;
+    vector<Vertex> _vertices;
 
+    shared_ptr<VertexBuffer> _vertexBuffer;
     shared_ptr<VertexShader> _vs;
     shared_ptr<PixelShader> _ps;
+    shared_ptr<InputLayout> _inputLayout;
+
+    shared_ptr<ColorBuffer> _colorBuffer;
 
     shared_ptr<Transform> _transform;
 };
